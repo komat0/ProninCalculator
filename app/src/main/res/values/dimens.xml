@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <dimen name="button_to_top">10dp</dimen>
+    <dimen name="button_to_bottom">10dp</dimen>
+    <dimen name="button_to_next_button">6dp</dimen>
+    <dimen name="screen_to_top">150dp</dimen>
+    <dimen name="screen_text_size">100sp</dimen>
+    <dimen name="button_text_size">36sp</dimen>
+    <dimen name="constraintGuideLine">10sp</dimen>
+</resources>
