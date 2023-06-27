@@ -1,9 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
     <style name="Base.Theme.ProninCalculator" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.ProninCalculator" parent="Base.Theme.ProninCalculator" />
+    <style name="Theme.ProninCalculator" parent="Base.Theme.ProninCalculator">
+        <item name="android:button">@color/digitButtons</item>
+        <item name="colorPrimaryDark">@color/actionButtons</item>
+        <item name="colorAccent">@color/buttonsTextColor</item>
+    </style>
+
 </resources>
