@@ -22,7 +22,7 @@
         app:layout_constraintGuide_end="@dimen/constraintGuideLine" />
 
     <EditText
-        android:id="@+id/CalculatorScreenText"
+        android:id="@+id/calculatorScreenText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/screen_to_top"
@@ -40,7 +40,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="CalculatorScreenText" />
+        app:constraint_referenced_ids="calculatorScreenText" />
 
     <Button
         android:id="@+id/button1"

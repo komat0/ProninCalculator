@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/Theme.ProninCalculator"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -21,8 +22,8 @@
         app:layout_constraintGuide_end="@dimen/constraintGuideLine" />
 
     <EditText
-        android:id="@+id/CalculatorScreenText"
-        android:layout_width="wrap_content"
+        android:id="@+id/calculatorScreenText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/screen_to_top"
         android:gravity="end"
@@ -39,13 +40,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="CalculatorScreenText" />
+        app:constraint_referenced_ids="calculatorScreenText" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/button_to_next_button"
+        android:onClick="onClickAnyButton"
         android:text="@string/button1text"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
@@ -61,6 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/button_to_next_button"
+        android:onClick="onClickAnyButton"
         android:text="@string/button2text"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
@@ -75,6 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/button_to_next_button"
+        android:onClick="onClickAnyButton"
         android:text="@string/button3text"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
@@ -88,6 +92,7 @@
         android:id="@+id/buttonDivision"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onClickAnyButton"
         android:text="@string/buttonDivisionText"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
@@ -102,6 +107,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/button_to_next_button"
+        android:onClick="onClickAnyButton"
         android:text="@string/button4text"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
@@ -116,6 +122,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/button_to_next_button"
+        android:onClick="onClickAnyButton"
         android:text="@string/button5text"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
@@ -129,6 +136,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/button_to_next_button"
+        android:onClick="onClickAnyButton"
         android:text="@string/button6text"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
@@ -141,6 +149,7 @@
         android:id="@+id/buttonMulti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onClickAnyButton"
         android:text="@string/buttonMultiText"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
@@ -161,13 +170,15 @@
         app:layout_constraintEnd_toStartOf="@id/button8"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="@id/content_start"
-        app:layout_constraintTop_toBottomOf="@id/button4" />
+        app:layout_constraintTop_toBottomOf="@id/button4"
+        android:onClick="onClickAnyButton" />
 
     <Button
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/button_to_next_button"
+        android:onClick="onClickAnyButton"
         android:text="@string/button8text"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
@@ -181,6 +192,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/button_to_next_button"
+        android:onClick="onClickAnyButton"
         android:text="@string/button9text"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
@@ -193,6 +205,7 @@
         android:id="@+id/buttonPlus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onClickAnyButton"
         android:text="@string/buttonPlusText"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
@@ -206,6 +219,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/button_to_next_button"
+        android:onClick="onClickAnyButton"
         android:text="@string/button0text"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
@@ -220,6 +234,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/button_to_next_button"
+        android:onClick="onClickAnyButton"
         android:text="@string/buttonClearText"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
@@ -233,6 +248,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/button_to_next_button"
+        android:onClick="onClickAnyButton"
         android:text="@string/buttonEqualsText"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
@@ -245,6 +261,7 @@
         android:id="@+id/buttonMinus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onClickAnyButton"
         android:text="@string/buttonMinusText"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
