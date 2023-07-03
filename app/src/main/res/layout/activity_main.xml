@@ -12,26 +12,36 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="@dimen/constraintGuideLine" />
+        app:layout_constraintGuide_begin="@dimen/constraintGuideLineVertical" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/content_end"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="@dimen/constraintGuideLine" />
+        app:layout_constraintGuide_end="@dimen/constraintGuideLineVertical" />
 
-    <EditText
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/equals_Button_guideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="@dimen/constraintGuideLineHorizontal" />
+
+    <TextView
         android:id="@+id/calculatorScreenText"
-        android:layout_width="match_parent"
+        style="@style/Widget.Material3.AutoCompleteTextView.FilledBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/screen_to_top"
+        android:clickable="true"
         android:gravity="end"
-        android:inputType="number"
+        android:onClick="onClickTextView"
         android:text="@string/screenText"
         android:textSize="@dimen/screen_text_size"
         app:layout_constraintBottom_toBottomOf="@id/screenBarrier"
         app:layout_constraintEnd_toStartOf="@+id/content_end"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/content_start"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -166,7 +176,7 @@
         android:text="@string/button7text"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/button0"
+        app:layout_constraintBottom_toTopOf="@id/buttonClear"
         app:layout_constraintEnd_toStartOf="@id/button8"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="@id/content_start"
@@ -182,7 +192,7 @@
         android:text="@string/button8text"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/buttonClear"
+        app:layout_constraintBottom_toTopOf="@id/button0"
         app:layout_constraintEnd_toStartOf="@id/button9"
         app:layout_constraintStart_toEndOf="@id/button7"
         app:layout_constraintTop_toBottomOf="@id/button5" />
@@ -196,7 +206,7 @@
         android:text="@string/button9text"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/buttonEquals"
+        app:layout_constraintBottom_toTopOf="@id/buttonDot"
         app:layout_constraintEnd_toStartOf="@id/buttonPlus"
         app:layout_constraintStart_toEndOf="@id/button8"
         app:layout_constraintTop_toBottomOf="@id/button6" />
@@ -215,21 +225,6 @@
         app:layout_constraintTop_toBottomOf="@id/buttonMulti" />
 
     <Button
-        android:id="@+id/button0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/button_to_next_button"
-        android:onClick="onClickAnyButton"
-        android:text="@string/button0text"
-        android:textSize="@dimen/button_text_size"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/buttonClear"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="@id/content_start"
-        app:layout_constraintTop_toBottomOf="@id/button7" />
-
-    <Button
         android:id="@+id/buttonClear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -238,24 +233,40 @@
         android:text="@string/buttonClearText"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/buttonEquals"
-        app:layout_constraintStart_toEndOf="@id/button0"
+        app:layout_constraintBottom_toTopOf="@id/equals_Button_guideLine"
+        app:layout_constraintEnd_toStartOf="@id/button0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/content_start"
+        app:layout_constraintTop_toBottomOf="@id/button7" />
+
+    <Button
+        android:id="@+id/button0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/button_to_next_button"
+        android:onClick="onClickAnyButton"
+        android:text="@string/button0text"
+        android:textSize="@dimen/button_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/equals_Button_guideLine"
+        app:layout_constraintEnd_toStartOf="@id/buttonDot"
+        app:layout_constraintStart_toEndOf="@id/buttonClear"
         app:layout_constraintTop_toBottomOf="@id/button8" />
 
     <Button
         android:id="@+id/buttonEquals"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/button_equals_size"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/button_to_next_button"
+        android:layout_marginBottom="@dimen/button_equals_to_bottom"
         android:onClick="onClickAnyButton"
         android:text="@string/buttonEqualsText"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/buttonMinus"
-        app:layout_constraintStart_toEndOf="@id/buttonClear"
-        app:layout_constraintTop_toBottomOf="@id/button9" />
+        app:layout_constraintEnd_toEndOf="@id/content_end"
+        app:layout_constraintStart_toStartOf="@id/content_start"
+        app:layout_constraintTop_toBottomOf="@id/equals_Button_guideLine" />
 
     <Button
         android:id="@+id/buttonMinus"
@@ -265,23 +276,37 @@
         android:text="@string/buttonMinusText"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/equals_Button_guideLine"
         app:layout_constraintEnd_toStartOf="@id/content_end"
-        app:layout_constraintStart_toEndOf="@id/buttonEquals"
+        app:layout_constraintStart_toEndOf="@id/buttonDot"
         app:layout_constraintTop_toBottomOf="@id/buttonPlus" />
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/digitalButtonsGroup"
+    <Button
+        android:id="@+id/buttonDot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="button0, button2, button3, button4,
-        button5, button6, button7, button8, button9, button0" />
+        android:layout_marginEnd="@dimen/button_to_next_button"
+        android:onClick="onClickAnyButton"
+        android:text="@string/buttonDotText"
+        android:textSize="@dimen/button_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/equals_Button_guideLine"
+        app:layout_constraintEnd_toStartOf="@id/buttonMinus"
+        app:layout_constraintStart_toEndOf="@id/button0"
+        app:layout_constraintTop_toBottomOf="@id/button9" />
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/actionsButtonsGroup"
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/darkModeSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="buttonDivision, buttonMulti,
-        buttonPlus, buttonMinus" />
+        android:onClick="darkModeChannge"
+        android:text="@string/switchText"
+        android:textSize="@dimen/switchTextSize"
+        app:layout_constraintBottom_toTopOf="@+id/calculatorScreenText"
+        app:layout_constraintEnd_toStartOf="@+id/content_end"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toStartOf="@+id/content_start"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.172" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

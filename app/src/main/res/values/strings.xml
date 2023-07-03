@@ -17,5 +17,7 @@
     <string name="buttonPlusText">+</string>
     <string name="buttonMinusText">-</string>
     <string name="buttonClearText">C</string>
+    <string name="buttonDotText">.</string>
     <string name="screenText">0</string>
+    <string name="switchText">DarkMode</string>
 </resources>
